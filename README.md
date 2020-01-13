@@ -6,8 +6,7 @@ Projetos de teste da linguagem Dart no SDK Flutter
 </img>
 </center>
 
-Este é um repositório público onde estarei postando minha evolução a medida em que estou estudando o Flutter e o Dart.
-Este repositório e aberto a Toda comunidade e pretendo com ele ajudar a evolução de outros programadores que estão passando pela mes afase de aprendizagem que eu.
+Este é um repositório público onde estarei postando minha evolução a medida em que estou estudando o Flutter e o Darte desta forma estará aberto a Toda comunidade e pretendo com ele ajudar a evolução de outros programadores que estão passando pela mesma fase de aprendizagem que eu.
 
 Tenho alguns artigos publicados no MEDIUM que pode ajudar quem está iniciando:
 
