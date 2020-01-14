@@ -4,7 +4,9 @@ Projeto criado por Claudney Sarti Sessa
 
 Packages Utilizados:
 
-flutter_masked_text
-mobx
-http
-flutter_mobx
+<ul>
+  <li>http</li>
+  <li>mobx</li>
+  <li>flutter_mobx</li>
+  <li>flutter_masked_text</li>
+</ul>
