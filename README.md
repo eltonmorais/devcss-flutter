@@ -22,7 +22,7 @@ Projetos Adicionados:
   <li><a href="https://github.com/claudneysessa/devcss-flutter/tree/master/consumo_api_cnpj">Consumo de API com http</a></li>
 </ul>
 
-<table style="width:100%">
+<table>
   <tr>
     <th>Firstname</th>
     <th>Lastname</th>
