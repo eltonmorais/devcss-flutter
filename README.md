@@ -16,7 +16,6 @@ Tenho alguns artigos publicados no MEDIUM que pode ajudar quem está iniciando:
   <li><a href="https://medium.com/@claudneysartisessa/iniciando-no-flutter-parte-2-evoluindo-o-ambiente-de-desenvolvimento-com-o-slidy-88e633e159c6">Iniciando no Flutter (Parte #2) : Evoluindo o ambiente de desenvolvimento com o Slidy</a></li>
 </ul>
 
-<br>
 Projetos Adicionados:
 
 <ul>
