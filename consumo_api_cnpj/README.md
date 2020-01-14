@@ -1,4 +1,4 @@
-# Exemplo de Consumo de API - Utilizando Flutter (API de Consulta de CNPJ)
+# Exemplo de Consumo de API - Utilizando Flutter
 
 Projeto criado por Claudney Sarti Sessa
 
