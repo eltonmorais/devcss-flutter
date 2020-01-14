@@ -5,6 +5,9 @@ Este é um exemplo simples de consumo de API utilizando o Flutter e o Package Ht
 Link da API:<br>
 <a href="https://receitaws.com.br/">https://receitaws.com.br/</a>
 
+Url da Requisição:<br>
+<a href="https://www.receitaws.com.br/v1/cnpj/[cnpj]">https://www.receitaws.com.br/v1/cnpj/[cnpj]</a>
+
 Packages Utilizados:
 
 <ul>
