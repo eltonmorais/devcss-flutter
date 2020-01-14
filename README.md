@@ -23,17 +23,17 @@ Projetos Adicionados:
 </ul>
 
 <table>
-  <tr>
+  <tr style="width:300px">
     <th>Firstname</th>
     <th>Lastname</th>
     <th>Age</th>
   </tr>
-  <tr>
+  <tr style="width:300px">
     <td>Jill</td>
     <td>Smith</td>
     <td>50</td>
   </tr>
-  <tr>
+  <tr style="width:300px">
     <td>Eve</td>
     <td>Jackson</td>
     <td>94</td>
