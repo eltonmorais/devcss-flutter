@@ -2,7 +2,7 @@
 
 Este é um exemplo simples de consumo de API utilizando o Flutter e o Package Http, tentei fazer ele em um padrão de organização da estrutura do projeto bem próximo ao Repository Pattern, ainda estou estudando um pouco estas camadas de estruturação do projeto mas mesmo assim espero que o exemplo ajude.
 
-Link da API
+Link da API:<br>
 <a href="https://receitaws.com.br/">https://receitaws.com.br/</a>
 
 Packages Utilizados:
