@@ -11,8 +11,8 @@ Url da Requisição:<br>
 Packages Utilizados:
 
 <ul>
-  <li>http</li>
-  <li>mobx</li>
-  <li>flutter_mobx</li>
-  <li>flutter_masked_text</li>
+  <li><a href="https://pub.dev/packages/http">http</a></li>
+  <li><a href="https://pub.dev/packages/mobx">mobx</a></li>
+  <li><a href="https://pub.dev/packages/flutter_mobx">flutter_mobx</a>/li>
+  <li><a href="https://pub.dev/packages/flutter_masked_text">flutter_masked_text</a></li>
 </ul>
