@@ -13,3 +13,9 @@ Tenho alguns artigos publicados no MEDIUM que pode ajudar quem está iniciando:
 <a href="https://medium.com/flutter-comunidade-br/iniciando-no-flutter-parte1-52e120e007d7">Iniciando no Flutter (Parte #1) : Instalando e Configurando o Flutter no Windows</a>
 <br>
 <a href="https://medium.com/@claudneysartisessa/iniciando-no-flutter-parte-2-evoluindo-o-ambiente-de-desenvolvimento-com-o-slidy-88e633e159c6">Iniciando no Flutter (Parte #2) : Evoluindo o ambiente de desenvolvimento com o Slidy</a>
+
+Projetos Adicionados:
+
+<ul>
+  <li><a href="">Consumo de API com http</a></li>
+</ul>
