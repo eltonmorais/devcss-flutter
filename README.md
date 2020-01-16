@@ -2,7 +2,7 @@
 Projetos de teste da linguagem Dart no SDK Flutter
 
 <center>
-<img style="width=1024" src="https://github.com/claudneysessa/devcss-flutter/blob/master/imagens/flutter-banner.jpg?raw=true">
+<img style="width=1024" src="https://github.com/claudneysessa/imagens/blob/master/flutter-banner.jpg?raw=true">
 </img>
 </center>
 
