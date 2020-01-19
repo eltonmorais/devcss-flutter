@@ -1,6 +1,6 @@
-# genius
+# GAME GENIUS
 
-&#x27;A new Flutter project. Created by Slidy&#x27;
+Réplica do jogo Genius em Flutter
 
 ## Getting Started
 
