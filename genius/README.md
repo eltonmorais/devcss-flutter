@@ -10,7 +10,22 @@ O Genius é um jogo eletrônico distribuído pela Estrela cópia do popular simo
 
 Quando o jogo é iniciado, o aparelho acende um dos botões e apresenta um efeito sonoro referente ao botão que acendeu. O jogador deve apertar no botão sinalizado. Com o tempo, a sequência de sinalizações aumenta, exigindo cada vez mais da memória do jogador, que deve apresentar a mesma sequência mostrada pelo jogo apertando nos botões.
 
-O projeto ainda está em desenvolvimento, aceito todo tipo de ajuda, sugestões e críticas pois acredito que daí é que vem o sucesso! pretendo terminar a implementação dele com as seguintes funcionalidades:
+O projeto ainda está em desenvolvimento, aceito todo tipo de ajuda, sugestões e críticas pois acredito que daí é que vem o sucesso! 
+
+Aprendizado durante o desenvolvimento
+
+* Técnicas de Layout
+* Animações
+* MobX
+* Utilização de packages
+
+Desafios
+
+* Fazer com que as animações seja realizadas ao inicio de cada rodada apresentando ao usuário a sequencia de cores e sons e a ordem em que ele deve interagir com o game para chegar ao final.
+* Implementar o modo Multi Jogador
+* Padronizar o projeto segundo as normas
+
+Pretendo terminar a implementação dele com as seguintes funcionalidades:
 
 * Multi Jogador Local
 * Multi Jogador Online
