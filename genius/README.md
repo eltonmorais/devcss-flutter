@@ -25,6 +25,8 @@ Desafios
 * Implementar o modo Multi Jogador
 * Padronizar o projeto segundo as normas
 
+<img src="https://github.com/claudneysessa/imagens/blob/master/genius-board.png?raw=true"></img>
+
 Pretendo terminar a implementação dele com as seguintes funcionalidades:
 
 * Multi Jogador Local
