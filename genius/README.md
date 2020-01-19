@@ -16,3 +16,5 @@ O projeto ainda está em desenvolvimento, aceito todo tipo de ajuda, sugestões 
 * Multi Jogador Online
 * Modos Difícil, Intermediário e fácil
 * Inclusão do som das teclas que já estão na pasta assets
+* Inclusão de jogo por desafios e níveis (Tipo o esquema de fases ods atuais games)
+* Possibilidade de mais layouts do board do game com formatos diferenciados
