@@ -9,31 +9,30 @@ part 'GameController.g.dart';
 class GameController = _GameControllerBase with _$GameController;
 
 abstract class _GameControllerBase with Store {
+  @observable
+  int _currentValue = 0;
 
   @observable
-  int _currentValue=0;
-
+  bool _isStarted = false;
   @observable
-  bool _isStarted=false;
+  bool _isAnimated = false;
   @observable
-  bool _isAnimated=false;
+  bool _sucesso = false;
   @observable
-  bool _sucesso=false;
+  bool _asError = false;
   @observable
-  bool _asError=false;
+  int _position = -1;
   @observable
-  int _position=-1;
-  @observable
-  int _animationPosition=0;
+  int _animationPosition = 0;
 
   @observable
   GeniusController genius = GeniusController();
 
   @observable
-  ObservableList currentValues=[].asObservable();
+  ObservableList<int> currentValues = <int>[].asObservable();
 
   @computed
-  bool get isStarted => this._isStarted;  
+  bool get isStarted => this._isStarted;
   @computed
   bool get isAnimated => this._isAnimated;
   @computed
@@ -44,109 +43,98 @@ abstract class _GameControllerBase with Store {
   int get animationPosition => this._animationPosition;
 
   Stream<int> _actionStream = Stream.periodic(
-      const Duration(seconds: 1,), 
-      (int count) {
-        return count;
-      }
-    ).asBroadcastStream();  
+      const Duration(
+        seconds: 1,
+      ), (int count) {
+    return count;
+  }).asBroadcastStream();
 
-  _GameControllerBase(){
-    this._isStarted=false;
-    this._isAnimated=false;
+  _GameControllerBase() {
+    this._isStarted = false;
+    this._isAnimated = false;
     gameAction();
   }
 
   @action
-  gameStart(int value){
-
-    this._asError=false;
-    this._isStarted=true;
-    this._sucesso=false;
-    this._position=0;
+  gameStart(int value) {
+    this._asError = false;
+    this._isStarted = true;
+    this._sucesso = false;
+    this._position = 0;
     this.currentValues.clear();
 
     genius.start(value);
     incrementaLista();
-
   }
 
   @action
-  startAnimation(){
-    this._isAnimated=true;
-    this._animationPosition=0;
+  startAnimation() {
+    this._isAnimated = true;
+    this._animationPosition = 0;
   }
 
   @action
-  animationNext(){
-    if(this.animationPosition<currentValues.length-1){
+  animationNext() {
+    if (this.animationPosition < currentValues.length - 1) {
       this._animationPosition++;
     } else {
-      this._isAnimated=false;
+      this._isAnimated = false;
     }
   }
 
   @action
-  incrementaLista(){
+  incrementaLista() {
     var _random = new Random();
-    currentValues.add(_random.nextInt(3)+1);
+    currentValues.add(_random.nextInt(3) + 1);
     print("Lista Atual: ${currentValues}");
   }
 
   @action
-  gameStop(){
-
-    this._isStarted=false;
-    this._isAnimated=false;
-    this._position=0;
+  gameStop() {
+    this._isStarted = false;
+    this._isAnimated = false;
+    this._position = 0;
 
     genius.reset();
-
   }
 
   @action
-  click(int value){
-    
-    if(this._isStarted){
-      if(currentValues[_position]==value){
+  click(int value) {
+    if (this._isStarted) {
+      if (currentValues[_position] == value) {
         _position++;
         genius.reinicarTempo(10);
       } else {
-        this._asError=true;
+        this._asError = true;
         gameStop();
       }
     }
 
-    if(currentValues.length==this._position){
+    if (currentValues.length == this._position) {
       incrementaLista();
-      this._position=0;
-      this._sucesso=true;
+      this._position = 0;
+      this._sucesso = true;
       genius.incrementaContador();
     }
-
   }
 
   @action
-  gameContinue(){
-    this._sucesso=false;
+  gameContinue() {
+    this._sucesso = false;
   }
 
   @action
   gameAction() {
-
     this._actionStream.listen((int newAmount) {
-
-      if(isStarted && genius.timer>1){
+      if (isStarted && genius.timer > 1) {
         genius.reduzirTimer();
       } else {
         gameStop();
       }
 
-      if(this.sucesso){
-        gameContinue();       
+      if (this.sucesso) {
+        gameContinue();
       }
-
     });
-
-  }  
-
+  }
 }

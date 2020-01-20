@@ -34,7 +34,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
 
   @override
   void initState() {
-
     scoreController.text = "0";
 
     super.initState();
@@ -44,17 +43,35 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     animationButton3 = AnimationController(duration: Duration(milliseconds: 200), vsync: this);
     animationButton4 = AnimationController(duration: Duration(milliseconds: 200), vsync: this);
 
-    // disposer = autorun(
-    //   (reaction){
-    //     setState(() {
-    //       if(gameController.sucesso){
-    //       sleep(Duration(seconds: 2));
-    //       gameController.gameContinue();
-    //     }
-    //     });
-    //   }
-    // );
+    reaction((r) => gameController.currentValues.length, (length) async {
+      // Esperando 1 segundo antes de iniciar para não ficar estranho pro usuário
+      await Future.delayed(const Duration(seconds: 1));
+      playAnimations();
+    });
+  }
 
+  Future<void> animateButton(AnimationController buttonController) async {
+    await buttonController.forward();
+    await buttonController.reverse();
+  }
+
+  Future<void> playAnimations() async {
+    for (var buttonPosition in gameController.currentValues) {
+      switch (buttonPosition) {
+        case 1:
+          await animateButton(animationButton1);
+          break;
+        case 2:
+          await animateButton(animationButton2);
+          break;
+        case 3:
+          await animateButton(animationButton3);
+          break;
+        case 4:
+          await animateButton(animationButton4);
+          break;
+      }
+    }
   }
 
   @override
@@ -84,18 +101,14 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                               "GENIUS",
                               textAlign: TextAlign.center,
                               style: TextStyle(
-                                  fontSize: 45,
-                                  color: Colors.blueGrey[100],
-                                  fontFamily: "arcadeType1"),
+                                  fontSize: 45, color: Colors.blueGrey[100], fontFamily: "arcadeType1"),
                             ),
                           ),
                           Text(
                             "Por: Claudney Sarti Sessa",
                             textAlign: TextAlign.center,
                             style: TextStyle(
-                                fontSize: 10,
-                                color: Colors.blueGrey[100],
-                                fontFamily: "arcadeType1"),
+                                fontSize: 10, color: Colors.blueGrey[100], fontFamily: "arcadeType1"),
                           )
                         ],
                       ),
@@ -124,8 +137,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                         width: 200,
                         height: 45,
                         child: RaisedButton(
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10)),
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                           color: Colors.green[700],
                           child: Text(
                             "Jogar",
@@ -168,14 +180,11 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                           fontWeight: FontWeight.bold,
                                           fontSize: 35),
                                       controller: TextEditingController(
-                                          text: gameController.genius.contador
-                                              .toString()),
+                                          text: gameController.genius.contador.toString()),
                                       decoration: InputDecoration(
                                           labelText: "Pontuação",
                                           labelStyle: TextStyle(
-                                              color: Colors.white,
-                                              fontFamily: "Roboto",
-                                              fontSize: 20),
+                                              color: Colors.white, fontFamily: "Roboto", fontSize: 20),
                                           enabled: true,
                                           border: OutlineInputBorder()),
                                     ),
@@ -198,15 +207,11 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                           fillColor: Colors.white,
                                           labelText: "Record",
                                           labelStyle: TextStyle(
-                                              color: Colors.white,
-                                              fontFamily: "Roboto",
-                                              fontSize: 20),
+                                              color: Colors.white, fontFamily: "Roboto", fontSize: 20),
                                           enabled: true,
                                           hoverColor: Colors.white,
                                           border: OutlineInputBorder(
-                                              borderSide: BorderSide(
-                                                  color: Colors.white,
-                                                  width: 5.0))),
+                                              borderSide: BorderSide(color: Colors.white, width: 5.0))),
                                     ),
                                   ),
                                 )

@@ -177,14 +177,14 @@ mixin _$GameController on _GameControllerBase, Store {
   final _$currentValuesAtom = Atom(name: '_GameControllerBase.currentValues');
 
   @override
-  ObservableList<dynamic> get currentValues {
+  ObservableList<int> get currentValues {
     _$currentValuesAtom.context.enforceReadPolicy(_$currentValuesAtom);
     _$currentValuesAtom.reportObserved();
     return super.currentValues;
   }
 
   @override
-  set currentValues(ObservableList<dynamic> value) {
+  set currentValues(ObservableList<int> value) {
     _$currentValuesAtom.context.conditionallyRunInAction(() {
       super.currentValues = value;
       _$currentValuesAtom.reportChanged();
