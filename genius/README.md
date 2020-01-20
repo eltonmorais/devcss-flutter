@@ -35,4 +35,4 @@ Pretendo terminar a implementação dele com as seguintes funcionalidades:
 * Modos Difícil, Intermediário e fácil
 * Inclusão do som das teclas que já estão na pasta assets
 * Inclusão de jogo por desafios e níveis (Tipo o esquema de fases dos atuais games do mercado)
-* Possibilidade de mais layouts do board do game com formatos diferenciados (Ex: Quadrado, Trinagulo, Estrela... imagens...)
+* Possibilidade de mais layouts do board do game com formatos diferenciados (Ex: Quadrado, triângulo, estrela, etc...)
