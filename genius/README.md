@@ -12,16 +12,19 @@ Quando o jogo é iniciado, o aparelho acende um dos botões e apresenta um efeit
 
 O projeto ainda está em desenvolvimento, aceito todo tipo de ajuda, sugestões e críticas pois acredito que daí é que vem o sucesso! 
 
-Aprendizado durante o desenvolvimento
+Aprendizado durante até agora no desenvolvimento
 
-* Técnicas de Layout
-* Animações
-* MobX
 * Utilização de packages
+* Utilização de fontes true type externas
+* Técnicas de Layout
+* Animações com AnimationController
+* MobX
 
-Desafios
+Desafios encontrados
 
-* Fazer com que as animações seja realizadas ao inicio de cada rodada apresentando ao usuário a sequencia de cores e sons e a ordem em que ele deve interagir com o game para chegar ao final.
+* Fazer com que as animações seja realizadas ao inicio de cada rodada apresentando ao usuário a sequencia de cores e a ordem em que ele deve interagir com o game para chegar ao final.
+* Incluir o som junto a animação do click
+* Fazer com que as animações seja realizadas ao inicio de cada rodada apresentando ao usuário a sequencia de cores e sons, e a ordem em que ele deve interagir com o game para chegar ao final.
 * Implementar o modo Multi Jogador
 * Padronizar o projeto segundo as normas
 
