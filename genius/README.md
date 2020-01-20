@@ -16,7 +16,7 @@ O projeto ainda está em desenvolvimento, aceito todo tipo de ajuda, sugestões 
 
 Atualmente minha esposa trabalha como professora e atua dando aula para crianças com necessidades especiais. Minha idéia é aprimorar meus conhecimentos no desenvolvimento de forma que eu tenha bagagem para o desenvolvimento de jogos possibilitando assim a criação de jogos educativos para auxiliar no desenvolvimento de crianças com necessidades especiais.
 
-# Aprendizado até agora
+Aprendizado até agora
 
 * Utilização de packages
 * Utilização de fontes true type externas
@@ -24,7 +24,7 @@ Atualmente minha esposa trabalha como professora e atua dando aula para criança
 * Animações com AnimationController
 * MobX
 
-# Desafios encontrados
+Desafios encontrados
 
 * Fazer com que as animações seja realizadas seguindo a lista de números gerado ao inicio de cada rodada
 * Incluir o som junto a animação do click
