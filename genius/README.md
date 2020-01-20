@@ -32,7 +32,7 @@ Atualmente minha esposa trabalha como professora e atua dando aula para criança
 * Implementar o modo Multi Jogador
 * Padronizar o projeto segundo as normas
 
-# Pretendo terminar a implementação dele com as seguintes funcionalidades:
+Pretendo terminar a implementação dele com as seguintes funcionalidades:
 
 * Multi Jogador Local
 * Multi Jogador Online
