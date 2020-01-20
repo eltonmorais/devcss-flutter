@@ -22,9 +22,9 @@ Aprendizado durante até agora no desenvolvimento
 
 Desafios encontrados
 
-* Fazer com que as animações seja realizadas ao inicio de cada rodada apresentando ao usuário a sequencia de cores e a ordem em que ele deve interagir com o game para chegar ao final.
+* Fazer com que as animações seja realizadas seguindo a lista de números gerado ao inicio de cada rodada
 * Incluir o som junto a animação do click
-* Fazer com que as animações seja realizadas ao inicio de cada rodada apresentando ao usuário a sequencia de cores e sons, e a ordem em que ele deve interagir com o game para chegar ao final.
+* Fazer com que o som seja executado junto a animação dos botões no inicio de cada rodada
 * Implementar o modo Multi Jogador
 * Padronizar o projeto segundo as normas
 
