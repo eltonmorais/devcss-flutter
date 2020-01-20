@@ -1,6 +1,6 @@
-# GAME GENIUS
+# GAME GENIUS/SIMON
 
-Réplica do jogo Genius em Flutter
+Desafio de implementação da réplica do jogo Genius/Simon em Flutter
 
 <img src="https://github.com/claudneysessa/imagens/blob/master/genius-full-dev.png?raw=true"></img>
 
