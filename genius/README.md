@@ -14,7 +14,7 @@ O projeto ainda está em desenvolvimento, aceito todo tipo de ajuda, sugestões 
 
 # Motivação
 
-Atualmente minha esposa trabalha como professora e atua dando aula para crianças com necessidades especiais. Minha idéia é aprimorar meus conhecimentos no desenvolvimento de forma que eu tenha bagagem para o desenvolvimento de jogos possibilitando assim a criação de jogos educativos para auxiliar no desenvolvimento de crianças com necessidades especiais.
+Atualmente minha esposa trabalha como professora e atua dando aula para crianças com necessidades especiais. Minha idéia é aprimorar meus conhecimentos no desenvolvimento de forma que eu tenha bagagem para o desenvolvimento de jogos possibilitando assim a criação e disponibilização de forma gratuita para pais, alunos e professores alguns jogos educativos para auxiliar no desenvolvimento de crianças com estes tipos de necessidades especiais.
 
 Aprendizado até agora
 
