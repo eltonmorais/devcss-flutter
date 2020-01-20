@@ -12,7 +12,11 @@ Quando o jogo é iniciado, o aparelho acende um dos botões e apresenta um efeit
 
 O projeto ainda está em desenvolvimento, aceito todo tipo de ajuda, sugestões e críticas pois acredito que daí é que vem o sucesso! 
 
-Aprendizado durante até agora no desenvolvimento
+# Motivação
+
+Atualmente minha esposa trabalha como professora e atua dando aula para crianças com necessidades especiais. Minha idéia é aprimorar meus conhecimentos no desenvolvimento de forma que eu tenha bagagem para o desenvolvimento de jogos possibilitando assim a criação de jogos educativos para auxiliar no desenvolvimento de crianças com necessidades especiais.
+
+# Aprendizado durante até agora no desenvolvimento
 
 * Utilização de packages
 * Utilização de fontes true type externas
@@ -20,7 +24,7 @@ Aprendizado durante até agora no desenvolvimento
 * Animações com AnimationController
 * MobX
 
-Desafios encontrados
+# Desafios encontrados
 
 * Fazer com que as animações seja realizadas seguindo a lista de números gerado ao inicio de cada rodada
 * Incluir o som junto a animação do click
@@ -28,7 +32,7 @@ Desafios encontrados
 * Implementar o modo Multi Jogador
 * Padronizar o projeto segundo as normas
 
-Pretendo terminar a implementação dele com as seguintes funcionalidades:
+# Pretendo terminar a implementação dele com as seguintes funcionalidades:
 
 * Multi Jogador Local
 * Multi Jogador Online
