@@ -4,6 +4,7 @@ import 'app/shared/controllers/game_controller.dart';
 import 'app/ui/home_page.dart';
 
 void main() {
+
   GetIt getIt = GetIt.I;
   getIt.registerSingleton<GameController>(GameController());
 
@@ -11,4 +12,5 @@ void main() {
     debugShowCheckedModeBanner: false,
     home: HomePage(),
   ));
+  
 }
