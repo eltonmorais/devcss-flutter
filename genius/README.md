@@ -2,7 +2,7 @@
 
 Desafio de implementação da réplica do jogo Genius/Simon em Flutter
 
-Este projeto foi desenvolvido apenas para praticar as habilidades obtidas durante meus estudos, não possui nenhuma finalidade comercial e muito menos interesse em ferir direitos autorais sobre o jogo original que possui uma versão naconal que é o GAME GENIUS da Estrela e uma versão internacional que é o SIMON da HASBRO.
+#Este projeto foi desenvolvido apenas para praticar as habilidades obtidas durante meus estudos, não possui nenhuma finalidade comercial e muito menos interesse em ferir direitos autorais sobre o jogo original que possui uma versão naconal que é o GAME GENIUS da Estrela e uma versão internacional que é o SIMON da HASBRO.
 
 <img src="https://github.com/claudneysessa/imagens/blob/master/genius-full-dev.png?raw=true"></img>
 
@@ -44,12 +44,12 @@ Pretendo terminar a implementação dele com as seguintes funcionalidades:
 * Possibilidade de mais layouts do board do game com formatos diferenciados (Ex: Quadrado, triângulo, estrela, etc...)
 
   
-># MIT License
->
->Copyright (c) 2020 Claudney Sarti Sessa
->
->Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
->
->The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
->
->THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+# MIT License
+
+Copyright (c) 2020 Claudney Sarti Sessa
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
