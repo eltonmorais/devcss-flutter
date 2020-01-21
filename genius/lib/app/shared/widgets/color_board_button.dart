@@ -2,34 +2,33 @@ import 'package:flutter/material.dart';
 import 'package:genius/app/shared/utils/uitls.dart';
 
 class ColorBoardButton extends StatefulWidget {
-
   final int buttonValue;
   final AnimationController buttonAnimation;
   final String buttonText;
   final Function() buttonTap;
 
-  const ColorBoardButton({
-    Key key, 
-    this.buttonValue, 
-    this.buttonText, 
-    this.buttonTap, 
-    this.buttonAnimation
-  }): super(key: key);
+  const ColorBoardButton(
+      {Key key,
+      this.buttonValue,
+      this.buttonText,
+      this.buttonTap,
+      this.buttonAnimation})
+      : super(key: key);
 
   @override
   _ColorBoardButtonState createState() => _ColorBoardButtonState();
-
 }
 
-class _ColorBoardButtonState extends State<ColorBoardButton> with SingleTickerProviderStateMixin {
-
+class _ColorBoardButtonState extends State<ColorBoardButton>
+    with SingleTickerProviderStateMixin {
   Animation<double> _animation;
   Tween<double> opacityTween;
 
   @override
   void initState() {
     super.initState();
-    _animation = Tween<double>(begin: 1, end: 0).animate(widget.buttonAnimation);
+    _animation =
+        Tween<double>(begin: 1, end: 0).animate(widget.buttonAnimation);
     _animation.addStatusListener((status) {
       if (status == AnimationStatus.completed) widget.buttonAnimation.reverse();
     });
@@ -64,7 +63,8 @@ class _ColorBoardButtonState extends State<ColorBoardButton> with SingleTickerPr
                 hoverColor: identificaCor(value: widget.buttonValue),
                 highlightColor: identificaCor(value: widget.buttonValue),
                 focusColor: identificaCor(value: widget.buttonValue),
-                splashColor: identificaCor(value: widget.buttonValue), //Colors.white,
+                splashColor:
+                    identificaCor(value: widget.buttonValue), //Colors.white,
               ),
             ),
           );

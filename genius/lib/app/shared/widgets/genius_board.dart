@@ -1,28 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:genius/app/shared/controllers/game_controller.dart';
+import 'package:get_it/get_it.dart';
 
 import 'color_board.dart';
 
 class GeniusBoard extends StatelessWidget {
-
-  final GameController gameController;
-
   final AnimationController buttonAnimation1;
   final AnimationController buttonAnimation2;
   final AnimationController buttonAnimation3;
   final AnimationController buttonAnimation4;
 
-  const GeniusBoard({
-    Key key, 
-    this.gameController, 
-    this.buttonAnimation1, 
-    this.buttonAnimation2, 
-    this.buttonAnimation3, 
-    this.buttonAnimation4
-  }) : super(key: key);
+  const GeniusBoard(
+      {Key key,
+      this.buttonAnimation1,
+      this.buttonAnimation2,
+      this.buttonAnimation3,
+      this.buttonAnimation4})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final controller = GetIt.I.get<GameController>();
+
     return Padding(
       padding: const EdgeInsets.all(20.0),
       child: ClipOval(
@@ -34,12 +33,10 @@ class GeniusBoard extends StatelessWidget {
             width: 400,
             child: ClipOval(
               child: ColorBoard(
-                buttonAnimation1: buttonAnimation1,
-                buttonAnimation2: buttonAnimation2,
-                buttonAnimation3: buttonAnimation3,
-                buttonAnimation4: buttonAnimation4,
-                gameController: gameController,
-              ),
+                  buttonAnimation1: buttonAnimation1,
+                  buttonAnimation2: buttonAnimation2,
+                  buttonAnimation3: buttonAnimation3,
+                  buttonAnimation4: buttonAnimation4),
             ),
           ),
         ),

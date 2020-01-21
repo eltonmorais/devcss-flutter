@@ -14,6 +14,11 @@ mixin _$GeniusController on _GeniusControllerBase, Store {
   @override
   int get contador =>
       (_$contadorComputed ??= Computed<int>(() => super.contador)).value;
+  Computed<int> _$recordComputed;
+
+  @override
+  int get record =>
+      (_$recordComputed ??= Computed<int>(() => super.record)).value;
   Computed<int> _$timerComputed;
 
   @override
@@ -36,6 +41,23 @@ mixin _$GeniusController on _GeniusControllerBase, Store {
     }, _$_contadorAtom, name: '${_$_contadorAtom.name}_set');
   }
 
+  final _$_recordAtom = Atom(name: '_GeniusControllerBase._record');
+
+  @override
+  int get _record {
+    _$_recordAtom.context.enforceReadPolicy(_$_recordAtom);
+    _$_recordAtom.reportObserved();
+    return super._record;
+  }
+
+  @override
+  set _record(int value) {
+    _$_recordAtom.context.conditionallyRunInAction(() {
+      super._record = value;
+      _$_recordAtom.reportChanged();
+    }, _$_recordAtom, name: '${_$_recordAtom.name}_set');
+  }
+
   final _$_timerAtom = Atom(name: '_GeniusControllerBase._timer');
 
   @override
@@ -53,8 +75,25 @@ mixin _$GeniusController on _GeniusControllerBase, Store {
     }, _$_timerAtom, name: '${_$_timerAtom.name}_set');
   }
 
+  final _$getRecordAsyncAction = AsyncAction('getRecord');
+
+  @override
+  Future getRecord() {
+    return _$getRecordAsyncAction.run(() => super.getRecord());
+  }
+
   final _$_GeniusControllerBaseActionController =
       ActionController(name: '_GeniusControllerBase');
+
+  @override
+  dynamic setRecord() {
+    final _$actionInfo = _$_GeniusControllerBaseActionController.startAction();
+    try {
+      return super.setRecord();
+    } finally {
+      _$_GeniusControllerBaseActionController.endAction(_$actionInfo);
+    }
+  }
 
   @override
   dynamic incrementaContador() {

@@ -3,6 +3,7 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:genius/app/shared/controllers/game_controller.dart';
 import 'package:genius/app/shared/widgets/background_widget.dart';
 import 'package:genius/app/shared/widgets/genius_board.dart';
+import 'package:get_it/get_it.dart';
 import 'package:mobx/mobx.dart';
 
 class HomePage extends StatefulWidget {
@@ -11,33 +12,34 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
+  final controller = GetIt.I.get<GameController>();
 
-  TextEditingController scoreController = TextEditingController();
-  GameController gameController = GameController();
-
-  AnimationController animationButton1;
-  AnimationController animationButton2;
-  AnimationController animationButton3;
-  AnimationController animationButton4;
+  AnimationController buttonAnimation1;
+  AnimationController buttonAnimation2;
+  AnimationController buttonAnimation3;
+  AnimationController buttonAnimation4;
 
   @override
   void initState() {
-    scoreController.text = "0";
 
     super.initState();
 
-    animationButton1 = AnimationController(duration: Duration(milliseconds: 200), vsync: this);
-    animationButton2 = AnimationController(duration: Duration(milliseconds: 200), vsync: this);
-    animationButton3 = AnimationController(duration: Duration(milliseconds: 200), vsync: this);
-    animationButton4 = AnimationController(duration: Duration(milliseconds: 200), vsync: this);
+    buttonAnimation1 =
+        AnimationController(duration: Duration(milliseconds: 200), vsync: this);
+    buttonAnimation2 =
+        AnimationController(duration: Duration(milliseconds: 200), vsync: this);
+    buttonAnimation3 =
+        AnimationController(duration: Duration(milliseconds: 200), vsync: this);
+    buttonAnimation4 =
+        AnimationController(duration: Duration(milliseconds: 200), vsync: this);
 
-    reaction((r) => gameController.currentValues.length, (length) async {
-
+    reaction((r) => controller.currentValues.length, (length) async {
       // Esperando 1 segundo antes de iniciar para não ficar estranho pro usuário
       await Future.delayed(const Duration(seconds: 1));
       playAnimations();
-
     });
+
+    controller.genius.getRecord();
 
   }
 
@@ -47,25 +49,25 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   }
 
   Future<void> playAnimations() async {
-    for (var buttonPosition in gameController.currentValues) {
-      if(gameController.isStarted){
+    for (var buttonPosition in controller.currentValues) {
+      if (controller.isStarted) {
         switch (buttonPosition) {
           case 1:
-            await animateButton(animationButton1);
+            await animateButton(buttonAnimation1);
             break;
           case 2:
-            await animateButton(animationButton2);
+            await animateButton(buttonAnimation2);
             break;
           case 3:
-            await animateButton(animationButton3);
+            await animateButton(buttonAnimation3);
             break;
           case 4:
-            await animateButton(animationButton4);
+            await animateButton(buttonAnimation4);
             break;
         }
       }
     }
-    gameController.setLoadingOff();
+    controller.setLoadingOff();
   }
 
   @override
@@ -96,11 +98,10 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                 "GENIUS",
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
-                                  letterSpacing: 1.5,
-                                  fontSize: 55, 
-                                  color: Colors.blueGrey[100], 
-                                  fontFamily: "arcadeType1"
-                                ),
+                                    letterSpacing: 1.5,
+                                    fontSize: 55,
+                                    color: Colors.blueGrey[100],
+                                    fontFamily: "arcadeType1"),
                               ),
                             ),
                             Center(
@@ -108,7 +109,9 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                 "Por: Claudney Sarti Sessa",
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
-                                    fontSize: 10, color: Colors.blueGrey[100], fontFamily: "arcadeType1"),
+                                    fontSize: 10,
+                                    color: Colors.blueGrey[100],
+                                    fontFamily: "arcadeType1"),
                               ),
                             )
                           ],
@@ -122,12 +125,10 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                       alignment: Alignment.topCenter,
                       color: Colors.transparent,
                       child: GeniusBoard(
-                        buttonAnimation1: animationButton1,
-                        buttonAnimation2: animationButton2,
-                        buttonAnimation3: animationButton3,
-                        buttonAnimation4: animationButton4,
-                        gameController: gameController,
-                      ),
+                          buttonAnimation1: buttonAnimation1,
+                          buttonAnimation2: buttonAnimation2,
+                          buttonAnimation3: buttonAnimation3,
+                          buttonAnimation4: buttonAnimation4),
                     ),
                   ),
                   Observer(
@@ -138,16 +139,17 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                           width: 200,
                           height: 45,
                           child: RaisedButton(
-                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10)),
                             color: Colors.green[700],
                             child: Text(
                               "Jogar",
                               style: TextStyle(color: Colors.white),
                             ),
-                            onPressed: (gameController.isStarted)
+                            onPressed: (controller.isStarted)
                                 ? null
                                 : () {
-                                    gameController.gameStart(10);
+                                    controller.gameStart(10);
                                   },
                           ),
                         ),
@@ -176,12 +178,13 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                         fontFamily: "lcdType1",
                                         fontWeight: FontWeight.bold,
                                         fontSize: 35),
-                                    controller: TextEditingController(
-                                        text: gameController.genius.contador.toString()),
+                                    controller: TextEditingController(text: controller.genius.contador.toString()),
                                     decoration: InputDecoration(
                                         labelText: "Pontuação",
                                         labelStyle: TextStyle(
-                                            color: Colors.white, fontFamily: "Roboto", fontSize: 20),
+                                            color: Colors.white,
+                                            fontFamily: "Roboto",
+                                            fontSize: 20),
                                         enabled: true,
                                         border: OutlineInputBorder()),
                                   ),
@@ -198,17 +201,21 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                         fontFamily: "lcdType1",
                                         fontWeight: FontWeight.bold,
                                         fontSize: 35),
-                                    controller: scoreController,
+                                    controller: TextEditingController(text: controller.genius.record.toString()),
                                     decoration: InputDecoration(
                                         focusColor: Colors.white,
                                         fillColor: Colors.white,
                                         labelText: "Record",
                                         labelStyle: TextStyle(
-                                            color: Colors.white, fontFamily: "Roboto", fontSize: 20),
+                                            color: Colors.white,
+                                            fontFamily: "Roboto",
+                                            fontSize: 20),
                                         enabled: true,
                                         hoverColor: Colors.white,
                                         border: OutlineInputBorder(
-                                            borderSide: BorderSide(color: Colors.white, width: 5.0))),
+                                            borderSide: BorderSide(
+                                                color: Colors.white,
+                                                width: 5.0))),
                                   ),
                                 ),
                               )

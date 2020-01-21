@@ -1,7 +1,1 @@
-
-enum buttonColors {
-  amarelho,
-  vermelho,
-  azul,
-  verde
-}
+enum buttonColors { amarelho, vermelho, azul, verde }

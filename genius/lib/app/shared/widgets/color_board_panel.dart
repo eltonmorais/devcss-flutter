@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:genius/app/shared/controllers/game_controller.dart';
+import 'package:get_it/get_it.dart';
 
 class ColorBoardPanel extends StatelessWidget {
-  final GameController gameController;
-
-  const ColorBoardPanel({Key key, this.gameController}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
+    final controller = GetIt.I.get<GameController>();
+
     return Center(
       child: ClipOval(
         child: Container(
@@ -22,9 +21,9 @@ class ColorBoardPanel extends StatelessWidget {
               color: Colors.grey[850],
               child: Observer(
                 builder: (BuildContext context) {
-                  return (gameController.isStarted)
-                      ? (gameController.sucesso)
-                        ? Column(
+                  return (controller.isStarted)
+                      ? (controller.sucesso)
+                          ? Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: <Widget>[
@@ -35,16 +34,15 @@ class ColorBoardPanel extends StatelessWidget {
                                 )
                               ],
                             )
-                        : Text(
-                            gameController.genius.timer.toString(),
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                fontSize: 100,
-                                fontFamily: "lcdType1",
-                                color: Colors.white
-                            ),
-                          )
-                      : (gameController.asError)
+                          : Text(
+                              controller.genius.timer.toString(),
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  fontSize: 100,
+                                  fontFamily: "lcdType1",
+                                  color: Colors.white),
+                            )
+                      : (controller.asError)
                           ? Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.center,
@@ -58,17 +56,16 @@ class ColorBoardPanel extends StatelessWidget {
                                   child: Text(
                                     "Errou!",
                                     style: TextStyle(
-                                        color: Colors.red, 
+                                        color: Colors.red,
                                         fontSize: 20,
                                         letterSpacing: 1.5,
                                         shadows: [
-                                            Shadow(
-                                              blurRadius: 8.0,
-                                              color: Colors.red[400],
-                                              offset: Offset(2.0, 2.0),
-                                            ),
-                                        ]
-                                      ),
+                                          Shadow(
+                                            blurRadius: 8.0,
+                                            color: Colors.red[400],
+                                            offset: Offset(2.0, 2.0),
+                                          ),
+                                        ]),
                                   ),
                                 )
                               ],
@@ -77,7 +74,7 @@ class ColorBoardPanel extends StatelessWidget {
                               Icons.refresh,
                               color: Colors.white,
                               size: 80,
-                            ); 
+                            );
                 },
               ),
             ),
