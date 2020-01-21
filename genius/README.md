@@ -44,7 +44,7 @@ Pretendo terminar a implementação dele com as seguintes funcionalidades:
 * Possibilidade de mais layouts do board do game com formatos diferenciados (Ex: Quadrado, triângulo, estrela, etc...)
 
   
-# MIT License
+># MIT License
 
 Copyright (c) 2020 Claudney Sarti Sessa
 
