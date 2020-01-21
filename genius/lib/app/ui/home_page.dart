@@ -6,6 +6,8 @@ import 'package:genius/app/shared/widgets/genius_board.dart';
 import 'package:get_it/get_it.dart';
 import 'package:mobx/mobx.dart';
 
+import 'widgets/points_widget.dart';
+
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
@@ -21,7 +23,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
 
   @override
   void initState() {
-
     super.initState();
 
     buttonAnimation1 =
@@ -40,7 +41,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     });
 
     controller.genius.getRecord();
-
   }
 
   Future<void> animateButton(AnimationController buttonController) async {
@@ -93,17 +93,19 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: <Widget>[
-                            Expanded(
+                            FittedBox(
                               child: Text(
                                 "GENIUS",
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
-                                    letterSpacing: 1.5,
-                                    fontSize: 55,
-                                    color: Colors.blueGrey[100],
-                                    fontFamily: "arcadeType1"),
+                                  letterSpacing: 1.5,
+                                  fontSize: 55,
+                                  color: Colors.blueGrey[100],
+                                  fontFamily: "arcadeType1",
+                                ),
                               ),
                             ),
+                            Spacer(),
                             Center(
                               child: Text(
                                 "Por: Claudney Sarti Sessa",
@@ -168,57 +170,17 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: <Widget>[
                               Expanded(
-                                child: Container(
-                                  padding: EdgeInsets.all(20),
-                                  child: TextField(
-                                    readOnly: true,
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontFamily: "lcdType1",
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 35),
-                                    controller: TextEditingController(text: controller.genius.contador.toString()),
-                                    decoration: InputDecoration(
-                                        labelText: "Pontuação",
-                                        labelStyle: TextStyle(
-                                            color: Colors.white,
-                                            fontFamily: "Roboto",
-                                            fontSize: 20),
-                                        enabled: true,
-                                        border: OutlineInputBorder()),
-                                  ),
+                                child: PointsWidget(
+                                  label: "Pontuação",
+                                  value: controller.genius.contador.toString(),
                                 ),
                               ),
                               Expanded(
-                                child: Container(
-                                  padding: EdgeInsets.all(20),
-                                  child: TextField(
-                                    readOnly: true,
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontFamily: "lcdType1",
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 35),
-                                    controller: TextEditingController(text: controller.genius.record.toString()),
-                                    decoration: InputDecoration(
-                                        focusColor: Colors.white,
-                                        fillColor: Colors.white,
-                                        labelText: "Record",
-                                        labelStyle: TextStyle(
-                                            color: Colors.white,
-                                            fontFamily: "Roboto",
-                                            fontSize: 20),
-                                        enabled: true,
-                                        hoverColor: Colors.white,
-                                        border: OutlineInputBorder(
-                                            borderSide: BorderSide(
-                                                color: Colors.white,
-                                                width: 5.0))),
-                                  ),
+                                child: PointsWidget(
+                                  label: "Record",
+                                  value: controller.genius.record.toString(),
                                 ),
-                              )
+                              ),
                             ],
                           ),
                         ),
