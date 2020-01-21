@@ -4,9 +4,6 @@ Desafio de implementação da réplica do jogo Genius/Simon em Flutter
 
 ### <i>Este projeto foi desenvolvido apenas para praticar as habilidades obtidas durante meus estudos, não possui nenhuma finalidade comercial e muito menos interesse em ferir direitos autorais sobre o jogo original que possui uma versão naconal que é o GAME GENIUS da Estrela e uma versão internacional que é o SIMON da HASBRO.</i><br>
 
-
-<img src="https://github.com/claudneysessa/imagens/blob/master/genius-full-dev.png?raw=true"></img>
-
 # O Genius
 
 O Genius é um jogo eletrônico distribuído pela Estrela cópia do popular simon da HASBRO que estimula a memorização do jogador. Ele tem o formato de um disco que é separado em quatro metades por botões coloridos. Esse jogo se tornou muito popular na década de 80 e diverte muitas pessoas ainda hoje.
@@ -44,6 +41,7 @@ Pretendo terminar a implementação dele com as seguintes funcionalidades:
 * Inclusão de jogo por desafios e níveis (Tipo o esquema de fases dos atuais games do mercado)
 * Possibilidade de mais layouts do board do game com formatos diferenciados (Ex: Quadrado, triângulo, estrela, etc...)
 
+<img src="https://github.com/claudneysessa/imagens/blob/master/genius-full-dev.png?raw=true"></img>
   
 # MIT License
 
