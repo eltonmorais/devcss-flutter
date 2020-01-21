@@ -2,6 +2,13 @@
 
 Desafio de implementação da réplica do jogo Genius/Simon em Flutter
 
+Desenvolvido por:
+* Claudney Sarti Sessa
+
+Colaboradores:
+* Jacob Moura
+* Savio Serra
+
 <img src="https://github.com/claudneysessa/imagens/blob/master/genius-full-dev.png?raw=true"></img>
 
 # O Genius
