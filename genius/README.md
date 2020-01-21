@@ -2,7 +2,7 @@
 
 Desafio de implementação da réplica do jogo Genius/Simon em Flutter
 
-### <i>Este projeto foi desenvolvido apenas para praticar as habilidades obtidas durante meus estudos, não possui nenhuma finalidade comercial e muito menos interesse em ferir direitos autorais sobre o jogo original que possui uma versão nacional que é o GAME GENIUS da Estrela e uma versão internacional que é o SIMON da HASBRO.</i><br>
+### <i>"Este projeto foi desenvolvido apenas para praticar as habilidades obtidas durante meus estudos, não possui nenhuma finalidade comercial e muito menos interesse em ferir direitos autorais sobre o jogo original que possui uma versão nacional que é o GAME GENIUS da Estrela e uma versão internacional que é o SIMON da HASBRO."</i><br>
 
 # O Genius
 
