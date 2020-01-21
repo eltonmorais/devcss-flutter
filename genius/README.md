@@ -42,6 +42,10 @@ Pretendo terminar a implementação dele com as seguintes funcionalidades:
 * Possibilidade de mais layouts do board do game com formatos diferenciados (Ex: Quadrado, triângulo, estrela, etc...)
 
 <img src="https://github.com/claudneysessa/imagens/blob/master/genius-full-dev.png?raw=true"></img>
+
+# Agradecimento
+
+Gostaria de agradecer a ajuda dos amigos Jacob Moura e Savio Serra que me ajudaram na resolução de alguns problemas que enfrentei no meio do desenvolvimento o que contribuiu muito para a finalização desta primeira etapa.
   
 # MIT License
 
