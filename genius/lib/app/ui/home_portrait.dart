@@ -57,16 +57,6 @@ class HomePortraitWidget extends StatelessWidget {
                               ),
                             ),
                           ),
-                          Container(
-                            child: Text(
-                              "Por: Claudney Sarti Sessa",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  fontSize: 10,
-                                  color: Colors.blueGrey[100],
-                                  fontFamily: "arcadeType1"),
-                            ),
-                          )
                         ],
                       ),
                     ),

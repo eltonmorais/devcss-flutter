@@ -31,86 +31,78 @@ class HomeLandscapetWidget extends StatelessWidget {
           child: Stack(
             children: <Widget>[
               BackgroundWidget(),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[
-                  Flexible(
-                    flex: 3,
-                    child: Container(
-                      alignment: Alignment.center,
-                      color: Colors.transparent,
-                      child: GeniusBoard(
-                          buttonAnimation1: buttonAnimation1,
-                          buttonAnimation2: buttonAnimation2,
-                          buttonAnimation3: buttonAnimation3,
-                          buttonAnimation4: buttonAnimation4),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    Flexible(
+                      flex: 3,
+                      child: Container(
+                        alignment: Alignment.center,
+                        color: Colors.transparent,
+                        child: GeniusBoard(
+                            buttonAnimation1: buttonAnimation1,
+                            buttonAnimation2: buttonAnimation2,
+                            buttonAnimation3: buttonAnimation3,
+                            buttonAnimation4: buttonAnimation4),
+                      ),
                     ),
-                  ),
-                  Observer(
-                    builder: (BuildContext context) {
-                      return Flexible(
-                        flex: 2,
-                        child: Container(
-                          padding: EdgeInsets.all(20),
-                          alignment: Alignment.topCenter,
-                          color: Colors.transparent,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: <Widget>[
-                              Container(
-                                child: Container(
-                                  alignment: Alignment.center,
-                                  color: Colors.transparent,
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.end,
-                                    children: <Widget>[
-                                      FittedBox(
-                                        child: Container(
-                                          child: Text(
-                                            "GENIUS",
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                              letterSpacing: 1.5,
-                                              fontSize: 55,
-                                              color: Colors.blueGrey[100],
-                                              fontFamily: "arcadeType1",
+                    Observer(
+                      builder: (BuildContext context) {
+                        return Flexible(
+                          flex: 2,
+                          child: Container(
+                            padding: EdgeInsets.all(20),
+                            alignment: Alignment.topCenter,
+                            color: Colors.transparent,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: <Widget>[
+                                Container(
+                                  child: Container(
+                                    alignment: Alignment.center,
+                                    color: Colors.transparent,
+                                    child: Column(
+                                      mainAxisAlignment: MainAxisAlignment.end,
+                                      children: <Widget>[
+                                        FittedBox(
+                                          child: Container(
+                                            child: Text(
+                                              "GENIUS",
+                                              textAlign: TextAlign.center,
+                                              style: TextStyle(
+                                                letterSpacing: 1.5,
+                                                fontSize: 55,
+                                                color: Colors.blueGrey[100],
+                                                fontFamily: "arcadeType1",
+                                              ),
                                             ),
                                           ),
-                                        ),
-                                      ),
-                                      Container(
-                                        child: Text(
-                                          "Por: Claudney Sarti Sessa",
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                              fontSize: 10,
-                                              color: Colors.blueGrey[100],
-                                              fontFamily: "arcadeType1"),
-                                        ),
-                                      )
-                                    ],
+                                        )
+                                      ],
+                                    ),
                                   ),
                                 ),
-                              ),
-                              Container(
-                                child: PointsWidget(
-                                  label: "Pontuação",
-                                  value: controller.genius.contador.toString(),
+                                Container(
+                                  child: PointsWidget(
+                                    label: "Pontuação",
+                                    value: controller.genius.contador.toString(),
+                                  ),
                                 ),
-                              ),
-                              Container(
-                                child: PointsWidget(
-                                  label: "Record",
-                                  value: controller.genius.record.toString(),
+                                Container(
+                                  child: PointsWidget(
+                                    label: "Record",
+                                    value: controller.genius.record.toString(),
+                                  ),
                                 ),
-                              ),
-                              Observer(
-                                builder: (BuildContext context) {
-                                  return Container(
-                                    alignment: Alignment.center,
-                                    child: SizedBox(
+                                Observer(
+                                  builder: (BuildContext context) {
+                                    return SizedBox(
+                                      width: 210,
+                                      height: 50,
                                       child: RaisedButton(
                                         shape: RoundedRectangleBorder(
                                             borderRadius:
@@ -126,17 +118,17 @@ class HomeLandscapetWidget extends StatelessWidget {
                                                 controller.gameStart(10);
                                               },
                                       ),
-                                    ),
-                                  );
-                                },
-                              )
-                            ],
+                                    );
+                                  },
+                                )
+                              ],
+                            ),
                           ),
-                        ),
-                      );
-                    },
-                  )
-                ],
+                        );
+                      },
+                    )
+                  ],
+                ),
               )
             ],
           ),
