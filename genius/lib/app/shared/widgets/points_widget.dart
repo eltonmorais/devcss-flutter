@@ -12,7 +12,7 @@ class PointsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(20),
+      padding: EdgeInsets.all(10),
       child: Stack(
         children: <Widget>[
           IgnorePointer(
@@ -23,11 +23,11 @@ class PointsWidget extends StatelessWidget {
               style: TextStyle(
                 color: Colors.white,
                 fontFamily: "lcdType1",
-                fontWeight: FontWeight.bold,
                 fontSize: 35,
               ),
               decoration: InputDecoration(
                 labelText: label,
+                alignLabelWithHint: true,
                 enabled: true,
                 border: OutlineInputBorder(),
                 labelStyle: TextStyle(

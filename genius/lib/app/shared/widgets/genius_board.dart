@@ -20,27 +20,33 @@ class GeniusBoard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = GetIt.I.get<GameController>();
 
-    return Padding(
-      padding: const EdgeInsets.all(20.0),
-      child: ClipOval(
-        child: Container(
-          color: Colors.black,
+    MediaQueryData media = MediaQuery.of(context);
+    Size size = media.size;
+
+    return OrientationBuilder(builder: (context, orientation) {
+      return Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: ClipOval(
           child: Container(
-            padding: EdgeInsets.all(20),
-            height: 360,
-            width: 400,
-            child: ClipOval(
-              child: ColorBoard(
-                  buttonAnimation1: buttonAnimation1,
-                  buttonAnimation2: buttonAnimation2,
-                  buttonAnimation3: buttonAnimation3,
-                  buttonAnimation4: buttonAnimation4),
+            color: Colors.black,
+            child: Container(
+              padding: EdgeInsets.all(20.0),
+              height: (orientation==Orientation.portrait) ? size.width : size.height,
+              width: (orientation==Orientation.portrait) ? size.width : size.height*0.87,
+              child: ClipOval(
+                child: ColorBoard(
+                    buttonAnimation1: buttonAnimation1,
+                    buttonAnimation2: buttonAnimation2,
+                    buttonAnimation3: buttonAnimation3,
+                    buttonAnimation4: buttonAnimation4
+                ),
+              ),
             ),
           ),
         ),
-      ),
-    );
+      );
+    });
+
   }
 }

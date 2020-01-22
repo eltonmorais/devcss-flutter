@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:genius/app/shared/theme/styles.dart';
 import 'package:genius/app/shared/utils/uitls.dart';
 
 class ColorBoardButton extends StatefulWidget {
@@ -36,20 +37,21 @@ class _ColorBoardButtonState extends State<ColorBoardButton>
 
   @override
   Widget build(BuildContext context) {
+
     return Container(
       decoration: BoxDecoration(
           border: BorderDirectional(
               start: (widget.buttonValue == 2 || widget.buttonValue == 3)
-                  ? BorderSide(width: 8)
+                  ? BorderSide(width: GeniusStyles.colorBoardBorderSide)
                   : BorderSide.none,
               end: (widget.buttonValue == 1 || widget.buttonValue == 4)
-                  ? BorderSide(width: 8)
+                  ? BorderSide(width: GeniusStyles.colorBoardBorderSide)
                   : BorderSide.none,
               top: (widget.buttonValue == 3 || widget.buttonValue == 4)
-                  ? BorderSide(width: 8)
+                  ? BorderSide(width: GeniusStyles.colorBoardBorderSide)
                   : BorderSide.none,
               bottom: (widget.buttonValue == 1 || widget.buttonValue == 2)
-                  ? BorderSide(width: 8)
+                  ? BorderSide(width: GeniusStyles.colorBoardBorderSide)
                   : BorderSide.none)),
       child: AnimatedBuilder(
         animation: _animation,
@@ -64,7 +66,7 @@ class _ColorBoardButtonState extends State<ColorBoardButton>
                 highlightColor: identificaCor(value: widget.buttonValue),
                 focusColor: identificaCor(value: widget.buttonValue),
                 splashColor:
-                    identificaCor(value: widget.buttonValue), //Colors.white,
+                    identificaCor(value: widget.buttonValue),
               ),
             ),
           );

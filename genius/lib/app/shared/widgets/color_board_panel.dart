@@ -15,9 +15,9 @@ class ColorBoardPanel extends StatelessWidget {
           padding: EdgeInsets.all(15),
           child: ClipOval(
             child: Container(
-              height: 130,
-              width: 130,
-              padding: EdgeInsets.all(15),
+              height: 100,
+              width: 100,
+              padding: EdgeInsets.all(0),
               color: Colors.grey[850],
               child: Observer(
                 builder: (BuildContext context) {
@@ -34,14 +34,16 @@ class ColorBoardPanel extends StatelessWidget {
                                 )
                               ],
                             )
-                          : Text(
-                              controller.genius.timer.toString(),
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  fontSize: 100,
-                                  fontFamily: "lcdType1",
-                                  color: Colors.white),
-                            )
+                          : Center(
+                            child: Text(
+                                controller.genius.timer.toString(),
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                    fontSize: 80,
+                                    fontFamily: "lcdType1",
+                                    color: Colors.white),
+                              ),
+                          )
                       : (controller.asError)
                           ? Column(
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -52,22 +54,6 @@ class ColorBoardPanel extends StatelessWidget {
                                   color: Colors.red,
                                   size: 80,
                                 ),
-                                Expanded(
-                                  child: Text(
-                                    "Errou!",
-                                    style: TextStyle(
-                                        color: Colors.red,
-                                        fontSize: 20,
-                                        letterSpacing: 1.5,
-                                        shadows: [
-                                          Shadow(
-                                            blurRadius: 8.0,
-                                            color: Colors.red[400],
-                                            offset: Offset(2.0, 2.0),
-                                          ),
-                                        ]),
-                                  ),
-                                )
                               ],
                             )
                           : Icon(

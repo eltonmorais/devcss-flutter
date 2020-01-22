@@ -3,10 +3,12 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:genius/app/shared/controllers/game_controller.dart';
 import 'package:genius/app/shared/widgets/background_widget.dart';
 import 'package:genius/app/shared/widgets/genius_board.dart';
+import 'package:genius/app/shared/widgets/points_widget.dart';
 import 'package:get_it/get_it.dart';
 import 'package:mobx/mobx.dart';
 
-import 'widgets/points_widget.dart';
+import 'home_landscape.dart';
+import 'home_portrait.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -72,127 +74,20 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        backgroundColor: Colors.black,
-        body: Center(
-          child: Stack(
-            children: <Widget>[
-              BackgroundWidget(),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[
-                  Flexible(
-                    flex: 2,
-                    child: Padding(
-                      padding: const EdgeInsets.all(15.0),
-                      child: Container(
-                        alignment: Alignment.center,
-                        color: Colors.transparent,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: <Widget>[
-                            FittedBox(
-                              child: Text(
-                                "GENIUS",
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  letterSpacing: 1.5,
-                                  fontSize: 55,
-                                  color: Colors.blueGrey[100],
-                                  fontFamily: "arcadeType1",
-                                ),
-                              ),
-                            ),
-                            Spacer(),
-                            Center(
-                              child: Text(
-                                "Por: Claudney Sarti Sessa",
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                    fontSize: 10,
-                                    color: Colors.blueGrey[100],
-                                    fontFamily: "arcadeType1"),
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                  Flexible(
-                    flex: 7,
-                    child: Container(
-                      alignment: Alignment.topCenter,
-                      color: Colors.transparent,
-                      child: GeniusBoard(
-                          buttonAnimation1: buttonAnimation1,
-                          buttonAnimation2: buttonAnimation2,
-                          buttonAnimation3: buttonAnimation3,
-                          buttonAnimation4: buttonAnimation4),
-                    ),
-                  ),
-                  Observer(
-                    builder: (BuildContext context) {
-                      return Flexible(
-                        flex: 1,
-                        child: SizedBox(
-                          width: 200,
-                          height: 45,
-                          child: RaisedButton(
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10)),
-                            color: Colors.green[700],
-                            child: Text(
-                              "Jogar",
-                              style: TextStyle(color: Colors.white),
-                            ),
-                            onPressed: (controller.isStarted)
-                                ? null
-                                : () {
-                                    controller.gameStart(10);
-                                  },
-                          ),
-                        ),
-                      );
-                    },
-                  ),
-                  Observer(
-                    builder: (BuildContext context) {
-                      return Flexible(
-                        flex: 2,
-                        child: Container(
-                          padding: EdgeInsets.all(10),
-                          alignment: Alignment.topCenter,
-                          color: Colors.transparent,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: <Widget>[
-                              Expanded(
-                                child: PointsWidget(
-                                  label: "Pontuação",
-                                  value: controller.genius.contador.toString(),
-                                ),
-                              ),
-                              Expanded(
-                                child: PointsWidget(
-                                  label: "Record",
-                                  value: controller.genius.record.toString(),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      );
-                    },
-                  )
-                ],
-              )
-            ],
-          ),
-        ),
-      ),
+    return OrientationBuilder(
+      builder: (context, orientation) {
+        return (orientation == Orientation.portrait)
+            ? HomePortraitWidget(
+                buttonAnimation1: buttonAnimation1,
+                buttonAnimation2: buttonAnimation2,
+                buttonAnimation3: buttonAnimation3,
+                buttonAnimation4: buttonAnimation4)
+            : HomeLandscapetWidget(
+                buttonAnimation1: buttonAnimation1,
+                buttonAnimation2: buttonAnimation2,
+                buttonAnimation3: buttonAnimation3,
+                buttonAnimation4: buttonAnimation4);
+      },
     );
   }
 }
