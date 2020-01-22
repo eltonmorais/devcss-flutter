@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:genius/app/shared/controllers/game_controller.dart';
+import 'package:genius/app/shared/theme/styles.dart';
 import 'package:genius/app/shared/widgets/background_widget.dart';
 import 'package:genius/app/shared/widgets/genius_board.dart';
 import 'package:genius/app/shared/widgets/points_widget.dart';
@@ -31,51 +32,51 @@ class HomePortraitWidget extends StatelessWidget {
           child: Stack(
             children: <Widget>[
               BackgroundWidget(),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[
-                  Flexible(
-                    flex: 2,
-                    child: Container(
-                      alignment: Alignment.center,
-                      color: Colors.transparent,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: <Widget>[
-                          FittedBox(
-                            child: Container(
-                              child: Text(
-                                "GENIUS",
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  letterSpacing: 1.5,
-                                  fontSize: 55,
-                                  color: Colors.blueGrey[100],
-                                  fontFamily: "arcadeType1",
+              Observer(
+                builder: (BuildContext context) {
+                  return Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      Flexible(
+                        flex: 2,
+                        child: Container(
+                          alignment: Alignment.center,
+                          color: Colors.transparent,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: <Widget>[
+                              FittedBox(
+                                child: Container(
+                                  child: Text(
+                                    "GENIUS",
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      letterSpacing: 1.5,
+                                      fontSize: 55,
+                                      color: Colors.blueGrey[100],
+                                      fontFamily: GeniusStyles.logoFontFamily,
+                                    ),
+                                  ),
                                 ),
                               ),
-                            ),
+                            ],
                           ),
-                        ],
+                        ),
                       ),
-                    ),
-                  ),
-                  Flexible(
-                    flex: 8,
-                    child: Container(
-                      alignment: Alignment.center,
-                      color: Colors.transparent,
-                      child: GeniusBoard(
-                          buttonAnimation1: buttonAnimation1,
-                          buttonAnimation2: buttonAnimation2,
-                          buttonAnimation3: buttonAnimation3,
-                          buttonAnimation4: buttonAnimation4),
-                    ),
-                  ),
-                  Observer(
-                    builder: (BuildContext context) {
-                      return Expanded(
+                      Flexible(
+                        flex: 8,
+                        child: Container(
+                          alignment: Alignment.center,
+                          color: Colors.transparent,
+                          child: GeniusBoard(
+                              buttonAnimation1: buttonAnimation1,
+                              buttonAnimation2: buttonAnimation2,
+                              buttonAnimation3: buttonAnimation3,
+                              buttonAnimation4: buttonAnimation4),
+                        ),
+                      ),
+                      Expanded(
                         child: SizedBox(
                           width: 200,
                           height: 45,
@@ -94,12 +95,8 @@ class HomePortraitWidget extends StatelessWidget {
                                   },
                           ),
                         ),
-                      );
-                    },
-                  ),
-                  Observer(
-                    builder: (BuildContext context) {
-                      return Flexible(
+                      ),
+                      Flexible(
                         flex: 2,
                         child: Container(
                           padding: EdgeInsets.all(10),
@@ -109,24 +106,31 @@ class HomePortraitWidget extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: <Widget>[
                               Expanded(
-                                child: PointsWidget(
-                                  label: "Pontuação",
-                                  value: controller.genius.contador.toString(),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(15.0),
+                                  child: PointsWidget(
+                                    label: "Pontuação",
+                                    value:
+                                        controller.genius.contador.toString(),
+                                  ),
                                 ),
                               ),
                               Expanded(
-                                child: PointsWidget(
-                                  label: "Record",
-                                  value: controller.genius.record.toString(),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(15.0),
+                                  child: PointsWidget(
+                                    label: "Record",
+                                    value: controller.genius.record.toString(),
+                                  ),
                                 ),
                               ),
                             ],
                           ),
                         ),
-                      );
-                    },
-                  )
-                ],
+                      )
+                    ],
+                  );
+                },
               )
             ],
           ),

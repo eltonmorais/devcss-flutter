@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:genius/app/shared/theme/styles.dart';
 
 class PointsWidget extends StatelessWidget {
   final String value;
@@ -11,51 +12,43 @@ class PointsWidget extends StatelessWidget {
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(10),
-      child: Stack(
-        children: <Widget>[
-          IgnorePointer(
-            child: TextField(
-              readOnly: true,
-              textAlign: TextAlign.center,
-              controller: TextEditingController(text: " "),
-              style: TextStyle(
+    return Stack(
+      children: <Widget>[
+        IgnorePointer(
+          child: TextField(
+            readOnly: true,
+            textAlign: TextAlign.center,
+            controller: TextEditingController(text: " "),
+            decoration: InputDecoration(
+              labelText: label,
+              alignLabelWithHint: true,
+              enabled: true,
+              border: OutlineInputBorder(),
+              labelStyle: TextStyle(
                 color: Colors.white,
-                fontFamily: "lcdType1",
-                fontSize: 35,
+                fontFamily: GeniusStyles.pointsEditLabelFontFamily,
+                fontSize: 20,
               ),
-              decoration: InputDecoration(
-                labelText: label,
-                alignLabelWithHint: true,
-                enabled: true,
-                border: OutlineInputBorder(),
-                labelStyle: TextStyle(
+            ),
+          ),
+        ),
+        Positioned.fill(
+          child: Padding(
+            padding: EdgeInsets.symmetric(vertical: 10),
+            child: FittedBox(
+              child: Text(
+                value,
+                style: TextStyle(
                   color: Colors.white,
-                  fontFamily: "Roboto",
-                  fontSize: 20,
+                  fontFamily: "lcdType1",
+                  fontWeight: FontWeight.bold,
+                  fontSize: 35,
                 ),
               ),
             ),
           ),
-          Positioned.fill(
-            child: Padding(
-              padding: EdgeInsets.symmetric(vertical: 10),
-              child: FittedBox(
-                child: Text(
-                  value,
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontFamily: "lcdType1",
-                    fontWeight: FontWeight.bold,
-                    fontSize: 35,
-                  ),
-                ),
-              ),
-            ),
-          ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

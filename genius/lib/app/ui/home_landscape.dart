@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:genius/app/shared/controllers/game_controller.dart';
+import 'package:genius/app/shared/theme/styles.dart';
 import 'package:genius/app/shared/widgets/background_widget.dart';
 import 'package:genius/app/shared/widgets/genius_board.dart';
 import 'package:genius/app/shared/widgets/points_widget.dart';
@@ -58,68 +59,74 @@ class HomeLandscapetWidget extends StatelessWidget {
                             alignment: Alignment.topCenter,
                             color: Colors.transparent,
                             child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: <Widget>[
                                 Container(
-                                  child: Container(
-                                    alignment: Alignment.center,
-                                    color: Colors.transparent,
-                                    child: Column(
-                                      mainAxisAlignment: MainAxisAlignment.end,
-                                      children: <Widget>[
-                                        FittedBox(
-                                          child: Container(
-                                            child: Text(
-                                              "GENIUS",
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                letterSpacing: 1.5,
-                                                fontSize: 55,
-                                                color: Colors.blueGrey[100],
-                                                fontFamily: "arcadeType1",
-                                              ),
+                                  padding: const EdgeInsets.all(8.0),
+                                  alignment: Alignment.center,
+                                  color: Colors.transparent,
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    children: <Widget>[
+                                      FittedBox(
+                                        child: Container(
+                                          child: Text(
+                                            "GENIUS",
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              letterSpacing: 1.5,
+                                              fontSize: 55,
+                                              color: Colors.blueGrey[100],
+                                              fontFamily: GeniusStyles.logoFontFamily,
                                             ),
                                           ),
-                                        )
-                                      ],
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                                Container(
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: PointsWidget(
+                                      label: "Pontuação",
+                                      value:
+                                          controller.genius.contador.toString(),
                                     ),
                                   ),
                                 ),
                                 Container(
-                                  child: PointsWidget(
-                                    label: "Pontuação",
-                                    value: controller.genius.contador.toString(),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: PointsWidget(
+                                      label: "Record",
+                                      value:
+                                          controller.genius.record.toString(),
+                                    ),
                                   ),
                                 ),
-                                Container(
-                                  child: PointsWidget(
-                                    label: "Record",
-                                    value: controller.genius.record.toString(),
-                                  ),
-                                ),
-                                Observer(
-                                  builder: (BuildContext context) {
-                                    return SizedBox(
-                                      width: 210,
-                                      height: 50,
-                                      child: RaisedButton(
-                                        shape: RoundedRectangleBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(10)),
-                                        color: Colors.green[700],
-                                        child: Text(
-                                          "Jogar",
-                                          style: TextStyle(color: Colors.white),
-                                        ),
-                                        onPressed: (controller.isStarted)
-                                            ? null
-                                            : () {
-                                                controller.gameStart(10);
-                                              },
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: SizedBox(
+                                    width: 210,
+                                    height: 50,
+                                    child: RaisedButton(
+                                      shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(10)),
+                                      color: Colors.green[700],
+                                      child: Text(
+                                        "Jogar",
+                                        style: TextStyle(color: Colors.white),
                                       ),
-                                    );
-                                  },
+                                      onPressed: (controller.isStarted)
+                                          ? null
+                                          : () {
+                                              controller.gameStart(10);
+                                            },
+                                    ),
+                                  ),
                                 )
                               ],
                             ),

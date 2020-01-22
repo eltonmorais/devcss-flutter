@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 
 class GeniusStyles {
 
+  static String logoFontFamily="arcadeType1";
+
+  static String pointsEditLabelFontFamily="Roboto";
+  static String pointsEditFontFamily="lcdType1";
+
   static double colorBoardBorderSide=12;
 
   static MaterialColor colorBoardColorButton1 = Colors.yellow;
