@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:genius/app/shared/controllers/game_controller.dart';
+import 'package:genius/app/shared/utils/audioPlayer.dart';
 import 'package:get_it/get_it.dart';
 
 import 'color_board_button.dart';
 import 'color_board_panel.dart';
 
 class ColorBoard extends StatelessWidget {
+
   final AnimationController buttonAnimation1;
   final AnimationController buttonAnimation2;
   final AnimationController buttonAnimation3;
@@ -58,6 +60,7 @@ class ColorBoard extends StatelessWidget {
                   buttonTap:
                       (controller.isStarted && controller.isLoading == false)
                           ? () {
+                              geniusPlaySound(1);
                               buttonAnimation1.forward();
                               controller.click(1);
                             }
@@ -76,6 +79,7 @@ class ColorBoard extends StatelessWidget {
                   buttonTap:
                       (controller.isStarted && controller.isLoading == false)
                           ? () {
+                              geniusPlaySound(2);
                               buttonAnimation2.forward();
                               controller.click(2);
                             }
@@ -104,6 +108,7 @@ class ColorBoard extends StatelessWidget {
                   buttonTap:
                       (controller.isStarted && controller.isLoading == false)
                           ? () {
+                              geniusPlaySound(4);
                               buttonAnimation4.forward();
                               controller.click(4);
                             }
@@ -122,6 +127,7 @@ class ColorBoard extends StatelessWidget {
                   buttonTap:
                       (controller.isStarted && controller.isLoading == false)
                           ? () {
+                              geniusPlaySound(3);
                               buttonAnimation3.forward();
                               controller.click(3);
                             }
