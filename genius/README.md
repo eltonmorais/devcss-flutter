@@ -43,10 +43,6 @@ Pretendo terminar a implementação dele com as seguintes funcionalidades:
 
 <img src="https://github.com/claudneysessa/imagens/blob/master/genius-full-dev.png?raw=true"></img>
 
-Layout Portrait
-
-<img src="https://github.com/claudneysessa/imagens/blob/master/genius_layout_landscape.png?raw=true"></img>
-
 # Agradecimento
 
 Gostaria de agradecer a ajuda dos amigos Jacob Moura e Savio Serra que me ajudaram na resolução de alguns problemas que enfrentei no meio do desenvolvimento o que contribuiu muito para a finalização desta primeira etapa.
