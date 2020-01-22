@@ -23,6 +23,9 @@ Aprendizado até agora
 * Técnicas de Layout
 * Animações com AnimationController
 * MobX
+* AudioPlayer
+* MediaQuery
+* AspectRatio
 
 Desafios encontrados
 
